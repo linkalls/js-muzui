@@ -15,9 +15,15 @@ while (input !== "quit" && input !== "q") {
   }
  
   else if (input === "delete") {
-    const delTodo = prompt("消したいTODOのインデックス番号を入力してください")
-    todos.splice(delTodo, 1)
+    const delTodo = parseInt(prompt("消したいTODOのインデックス番号を入力してください"))
+    if (!Number.isNaN(delTodo)) {
+      todos.splice(delTodo, 1)
     console.log(`${delTodo}番目のTODOを削除しました`)
+    } else {
+      console.log("無効なインデックス番号です")
+      
+    }
+    
   }
 
   input = prompt("コマンドを入力してください(new.list.delete,quit)")
