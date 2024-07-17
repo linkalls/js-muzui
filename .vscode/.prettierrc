@@ -1,8 +1,8 @@
 {
 "printWidth": 120,
 "trailingComma": "es5",
-"prettier.tabWidth": 2,
-"prettier.semi": false,
-"prettier.singleQuote": false,
-"prettier.endOfLine": "lf"
+"tabWidth": 2,
+"semi": false,
+"singleQuote": false,
+"endOfLine": "lf"
 }
