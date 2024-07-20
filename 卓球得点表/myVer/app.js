@@ -1,5 +1,4 @@
 const count = document.querySelector("#count")
-
 const resetButton = document.querySelector("#reset")
 const addUser2 = document.querySelector("#addUser2")
 const addUser1 = document.querySelector("#addUser1")
@@ -10,15 +9,9 @@ const buttons = [addUser1, addUser2]
 resetButton.addEventListener("click", () => {
   count.value = 0
   console.log("reset!!")
-  // const userDisplayCount = [parseInt(user1.innerText), parseInt(user2.innerText)]
-  // for (let userDC of userDisplayCount) {
-  //   console.log(userDC)
-  //   userDC = "0"
-  //   console.log(user1.innerText)
-  // }
+
   const userDisplayCount = [user1, user2]
   for (let userDC of userDisplayCount) {
-    // console.log(userDC)
     userDC.innerText = 0
     userDC.removeAttribute("style")
   }
@@ -35,14 +28,11 @@ count.addEventListener("change", (e) => {
 addUser1.addEventListener("click", () => {
   const user1Value = parseInt(user1.innerText)
   user1.innerText = user1Value + 1
- const check = isOver(total(), parseInt(user1.innerText))
+  const check = isOver(total(), parseInt(user1.innerText))
   if (check === true) {
     user2.style.color = "red"
     user1.style.color = "green"
   }
-  // if (check === true) {
-  //   addUser1.setAttribute("disabled", "")
-  // }
 })
 
 addUser2.addEventListener("click", () => {
@@ -53,13 +43,6 @@ addUser2.addEventListener("click", () => {
     user2.style.color = "green"
     user1.style.color = "red"
   }
-  // if (check === true) {
-  //   addUser2.setAttribute("disabled", "")
-  // }
-  // if(parseInt(user2.innerText) === totalNum){
-  //   console.log("到達したよ")
-  //  addUser2.setAttribute("disabled","")
-  // }
 })
 
 function total() {
@@ -68,7 +51,6 @@ function total() {
 
 function isOver(totalNum, userCount) {
   if (parseInt(userCount) === totalNum) {
-    // return true
     addUser2.setAttribute("disabled", "")
     addUser1.setAttribute("disabled", "")
     return true
@@ -76,10 +58,11 @@ function isOver(totalNum, userCount) {
   return false
 }
 
-
-// const a = document.querySelector("#AAA")
-// function afi(e){
-// a.innerText = e.key
-// }
-
-// window.addEventListener("keyup",afi)
+count.addEventListener("change", () => {
+  if (parseInt(user1.innerText) !== 0 || parseInt(user2.innerText) !== 0) count.value = 0
+  console.log("reset!!")
+  const userDisplayCount = [user1, user2]
+  for (let userDC of userDisplayCount) {
+    userDC.innerText = 0
+  }
+})

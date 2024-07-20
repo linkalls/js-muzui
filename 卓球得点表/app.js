@@ -4,6 +4,13 @@ const p1 = {
     display: document.querySelector('#p1Display')
 }
 
+
+//*  果物の箱 (オブジェクト)
+//* const で果物の箱を宣言した場合:
+
+//* 箱自体 (変数) は固定: 別の箱に置き換えることはできません。
+//* 中身 (プロパティ) は自由: 中身の果物を別の種類に交換したり、数を増減したりできます。
+
 const p2 = {
     score: 0,
     button: document.querySelector('#p2Button'),
